@@ -1,0 +1,16 @@
+{
+    "name": "double-click/oop",
+    "autoload": {
+      "psr-4": {
+            "App\\": "App/",
+            "Classes\\": "Classes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AbdelmonaimKH",
+            "email": "akhennouf@doubleclicktech.dz"
+        }
+    ],
+    "require": {}
+}

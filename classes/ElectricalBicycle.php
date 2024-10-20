@@ -1,18 +1,20 @@
 <?php 
+namespace Classes;
 
-require_once 'classes/Bicycle.php';
+require_once '../classes/Bicycle.php';
+use Classes\Bicycle;
 class ElectricalBicycle extends Bicycle {
 
     public $energy;
-    public bool $is_light;
+    public null $is_light;
 
 
     function SetEnergy($is_light){
 
-        if ($this->is_light){
-            $this->energy = 'Full';
+        if ($is_light){
+            $this->energy = "Full";
         }else{
-            $this->energy= 'Empty';
+            $this->energy= "Empty";
         }
         return $this->energy;
     }

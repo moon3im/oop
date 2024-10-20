@@ -1,18 +1,9 @@
-<?php
-// var_dump($_POST);
-require_once 'classes/Bicycle.php';
-require_once 'classes/ElectricalBicycle.php';
-
-$bicycle= new Bicycle();
-$bicycle->brand = $_POST['brand'] ?? null;
-$bicycle->model = $_POST['model']?? null;
-$bicycle->year = $_POST['year']?? null;
-$bicycle->description = $_POST['description']?? null;
-$bicycle->weight = $_POST['weight']?? null;
-
-$elec_bicycle= new ElectricalBicycle();
-$elec_bicycle->energy= $_POST['year'] ?? null ;
+<?php 
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
 ?>
+
 <h1>Welcome To Our Store</h1>
 <form action="index.php" method="post">
 <input type="text" name="brand" value="" placeholder="brand"></input>
@@ -26,13 +17,44 @@ $elec_bicycle->energy= $_POST['year'] ?? null ;
 <a href="exchange.php" class="button">Go to Convert your bicycle weight</a>
 <a href="energy.php" class="button">Go to See Energy</a>
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once '../vendor/autoload.php';
+require_once '../classes/Bicycle.php';
+require_once '../classes/ElectricalBicycle.php';
+
+use Classes\Bicycle;
+use Classes\ElectricalBicycle;
+
+?>
+<?php
+session_start();
+
+if(isset($_POST)){
+    $_SESSION['brand'] = $_POST['brand'];
+    $_SESSION['model'] = $_POST['model'];
+    $_SESSION['year'] = $_POST['year'];
+    $_SESSION['description'] = $_POST['description'];
+    $_SESSION['weight'] = $_POST['weight'];
+}
+
+$bicycle= new Bicycle();
+$bicycle->brand = $_POST['brand'] ?? null;
+$bicycle->model = $_POST['model']?? null;
+$bicycle->year = $_POST['year']?? null;
+$bicycle->description = $_POST['description']?? null;
+$weight= $_POST['weight'];
+$bicycle->set_weight($weight);
+echo Bicycle::CURENT_YEAR;
 
 $name = $bicycle->name();
 
 echo "<pre>";
 print_r($bicycle) . "<br>"; 
-
 echo "the bicycle name is " . $name ."<br>" ;
+
+
 
 
 

@@ -10,14 +10,25 @@
 
 
 <?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+var_dump("hello");
+require_once '../classes/Bicycle.php';
+require_once '../vendor/autoload.php';
+require_once '../classes/ElectricalBicycle.php';
+use Classes\Bicycle;
+use Classes\ElectricalBicycle; 
+$weight="85.26";
+$b = new Bicycle();
+$b->set_weight($weight);
+
 $is_light=$_POST['is_light'];
 
-var_dump($is_light);
 
 $elec_bicycle = new ElectricalBicycle();
 
 
-var_dump($elec_bicycle);
 echo $elec_bicycle->SetEnergy($is_light);
 
 ?>
