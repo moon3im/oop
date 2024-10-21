@@ -1,20 +1,21 @@
-1,Speedster 1000,FX 1,2022,Red,12.5,499.99,"A lightweight hybrid bike for city rides.",Hybrid,Very Good
-2,Mountain King,Stumpjumper,2021,Blue,14.2,1799.99,"A robust mountain bike designed for rough terrains.",Mountain,Excellent
-3,City Cruiser,Escape 3,2023,Black,13.0,599.99,"A comfortable bike for daily commuting.",City,Very Good
-4,Pro Racer,Synapse,2022,Yellow,9.8,2499.99,"A performance road bike for serious cyclists.",Hybrid,Excellent
-5,Adventure Rider,Bridge Club,2020,Green,15.5,1399.99,"Perfect for adventure cycling on any terrain.",Mountain,Good
-6,Classic Cruiser,Townie,2023,Pink,11.0,399.99,"A stylish cruiser for relaxed rides.",City,Very Good
-7,Urban Commuter,Sub Cross,2021,White,12.8,749.99,"Ideal for commuting with a touch of sportiness.",City,Very Good
-8,Fat Bike Warrior,Bike 100,2022,Orange,16.0,1499.99,"A fat bike for off-road adventures and winter rides.",Mountain,Very Good
-9,Kids Explorer,Scorch,2023,Red,10.0,199.99,"A durable bike for kids to explore the neighborhood.",City,Excellent
-10,Hybrid Pro,Nicasio,2021,Silver,13.5,899.99,"A versatile bike that excels on both pavement and trails.",Hybrid,Very Good
-11,Cruiser Deluxe,Amsterdam,2022,Brown,13.2,549.99,"A classic cruiser with modern comforts.",City,Good
-12,Trail Blazer,Addy,2020,Black,14.0,999.99,"Designed for trails and adventurous rides.",Mountain,Very Good
-13,City Slicker,Pioneer,2023,Teal,11.5,699.99,"Perfect for urban rides with style and comfort.",City,Very Good
-14,Performance Pro,Domane,2022,Red,8.9,2999.99,"A lightweight road bike built for speed and performance.",Hybrid,Excellent
-15,Off-Road Beast,Cycles SB130,2021,Blue,15.0,3999.99,"A top-tier mountain bike for extreme trails.",Mountain,Excellent
-16,Recreational Rider,Quick,2023,Yellow,12.2,549.99,"Great for casual rides and fitness.",Hybrid,Very Good
-17,Rugged Roadie,Turbo Vado,2022,Green,16.3,3199.99,"An e-bike that handles tough roads with ease.",Hybrid,Excellent
-18,Beach Cruiser,Wave Rider,2023,Purple,12.7,299.99,"A fun bike for beachside rides.",City,Very Good
-19,Explorer 2000,Talon,2021,Orange,14.5,899.99,"Built for mountain trails and rough paths.",Mountain,Very Good
-20,Retro Revival,Volpe,2022,Turquoise,13.8,1299.99,"A retro-style bike with modern performance.",Hybrid,Very Good
+brand,model,year,color,weight,price,description,category,condition
+Speedster 1000,FX 1,2022,Red,12.5,499.99,"A lightweight hybrid bike for city rides.",Hybrid,Very Good
+Mountain King,Stumpjumper,2021,Blue,14.2,1799.99,"A robust mountain bike designed for rough terrains.",Mountain,Excellent
+City Cruiser,Escape 3,2023,Black,13.0,599.99,"A comfortable bike for daily commuting.",City,Very Good
+Pro Racer,Synapse,2022,Yellow,9.8,2499.99,"A performance road bike for serious cyclists.",Hybrid,Excellent
+Adventure Rider,Bridge Club,2020,Green,15.5,1399.99,"Perfect for adventure cycling on any terrain.",Mountain,Good
+Classic Cruiser,Townie,2023,Pink,11.0,399.99,"A stylish cruiser for relaxed rides.",City,Very Good
+Urban Commuter,Sub Cross,2021,White,12.8,749.99,"Ideal for commuting with a touch of sportiness.",City,Very Good
+Fat Bike Warrior,Bike 100,2022,Orange,16.0,1499.99,"A fat bike for off-road adventures and winter rides.",Mountain,Very Good
+Kids Explorer,Scorch,2023,Red,10.0,199.99,"A durable bike for kids to explore the neighborhood.",City,Excellent
+Hybrid Pro,Nicasio,2021,Silver,13.5,899.99,"A versatile bike that excels on both pavement and trails.",Hybrid,Very Good
+Cruiser Deluxe,Amsterdam,2022,Brown,13.2,549.99,"A classic cruiser with modern comforts.",City,Good
+Trail Blazer,Addy,2020,Black,14.0,999.99,"Designed for trails and adventurous rides.",Mountain,Very Good
+City Slicker,Pioneer,2023,Teal,11.5,699.99,"Perfect for urban rides with style and comfort.",City,Very Good
+Performance Pro,Domane,2022,Red,8.9,2999.99,"A lightweight road bike built for speed and performance.",Hybrid,Excellent
+Off-Road Beast,Cycles SB130,2021,Blue,15.0,3999.99,"A top-tier mountain bike for extreme trails.",Mountain,Excellent
+Recreational Rider,Quick,2023,Yellow,12.2,549.99,"Great for casual rides and fitness.",Hybrid,Very Good
+Rugged Roadie,Turbo Vado,2022,Green,16.3,3199.99,"An e-bike that handles tough roads with ease.",Hybrid,Excellent
+Beach Cruiser,Wave Rider,2023,Purple,12.7,299.99,"A fun bike for beachside rides.",City,Very Good
+Explorer 2000,Talon,2021,Orange,14.5,899.99,"Built for mountain trails and rough paths.",Mountain,Very Good
+Retro Revival,Volpe,2022,Turquoise,13.8,1299.99,"A retro-style bike with modern performance.",Hybrid,Very Good
