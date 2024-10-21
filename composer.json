@@ -1,11 +1,13 @@
 {
     "name": "double-click/oop",
     "autoload": {
-      "psr-4": {
-            "App\\": "App/",
-            "Classes\\": "Classes/"
-        }
+    "psr-4": {
+        "App\\": "private/classes/",
+        "Shared\\": "private/shared/",
+        "": "private/"
+    }
     },
+
     "authors": [
         {
             "name": "AbdelmonaimKH",

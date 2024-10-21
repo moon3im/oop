@@ -1,8 +1,8 @@
 <?php 
-namespace Classes;
+namespace App;
 
 require_once '../classes/Bicycle.php';
-use Classes\Bicycle;
+use App\Bicycle;
 class ElectricalBicycle extends Bicycle {
 
     public $energy;

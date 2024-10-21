@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11
 {
     public static $prefixLengthsPsr4 = array (
-        'C' => 
+        'S' => 
         array (
-            'Classes\\' => 8,
+            'Shared\\' => 7,
         ),
         'A' => 
         array (
@@ -18,14 +18,18 @@ class ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11
     );
 
     public static $prefixDirsPsr4 = array (
-        'Classes\\' => 
+        'Shared\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/classes',
+            0 => __DIR__ . '/../..' . '/private/shared',
         ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/private/classes',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/private',
     );
 
     public static $classMap = array (
@@ -37,6 +41,7 @@ class ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11::$classMap;
 
         }, null, ClassLoader::class);

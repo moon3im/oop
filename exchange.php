@@ -18,7 +18,7 @@ use Classes\ElectricalBicycle;
 
 if(isset($_POST)){
     if($_POST['weight_kg']){
-        $newbicycle = new ElectricalBicycle();
+        $newbicycle = new ElectricalBicycle("vtt" , 2021);
         $weight_kg= $_POST['weight_kg'] ;
         if((int)$weight_kg != 0){
             echo "the bicycle weight in KG is ". $weight_kg ."  and with pounds is " . "". $newbicycle->weight_lb($weight_kg) . " ";
@@ -26,7 +26,7 @@ if(isset($_POST)){
             echo "Please put your weight";
         }
     }elseif($_POST['weight_lbs']){
-        $newbicycle = new ElectricalBicycle();
+        $newbicycle = new ElectricalBicycle("vtt" , 2021);
         $weight_lbs= $_POST['weight_lbs'] ;
         if((int)$weight_lbs != 0){
             echo "the bicycle weight in pounds is ". $weight_lbs ."  and with KG is " . "". $newbicycle->weight_lbs($weight_lbs) . " ";

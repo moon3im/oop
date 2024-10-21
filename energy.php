@@ -20,13 +20,13 @@ require_once '../classes/ElectricalBicycle.php';
 use Classes\Bicycle;
 use Classes\ElectricalBicycle; 
 $weight="85.26";
-$b = new Bicycle();
+$b = new Bicycle("btw" , 2020);
 $b->set_weight($weight);
 
 $is_light=$_POST['is_light'];
 
 
-$elec_bicycle = new ElectricalBicycle();
+$elec_bicycle = new ElectricalBicycle("vtt" , 2024);
 
 
 echo $elec_bicycle->SetEnergy($is_light);
