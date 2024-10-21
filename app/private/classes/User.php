@@ -1,19 +1,29 @@
 <?php 
+namespace Classes;
 
-class Student {
+class User {
 
-var $name;
-var $age;
+private $is_admin = false;  
+public $name;
+protected $age;
 
-var $class;
+protected $class;
 
-var $gender;
+protected $gender;
 
-function StudentName(){
+
+public function set_adminaccess($is_admin){
+    $this->is_admin = $is_admin;
+}
+
+public function get_adminaccess(){
+    return $this->is_admin; 
+}
+public function UserName(){
     echo 'the Student name is ' . $this->name;
 }
 
-function StudentAge(){
+protected function UserAge(){
     echo 'the Student age is ' . $this->age;
 }
 

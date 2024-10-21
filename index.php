@@ -1,38 +1,56 @@
-<?php
-// var_dump($_POST);
-require_once 'classes/Bicycle.php';
-require_once 'classes/ElectricalBicycle.php';
+<?php 
 
-$bicycle= new Bicycle();
-$bicycle->brand = $_POST['brand'] ?? null;
-$bicycle->model = $_POST['model']?? null;
-$bicycle->year = $_POST['year']?? null;
-$bicycle->description = $_POST['description']?? null;
-$bicycle->weight = $_POST['weight']?? null;
+header('Location:../app/public/src/home.php');
+exit;
 
-$elec_bicycle= new ElectricalBicycle();
-$elec_bicycle->energy= $_POST['year'] ?? null ;
 ?>
-<h1>Welcome To Our Store</h1>
+
+<!-- <h1>Welcome To Our Store</h1>
 <form action="index.php" method="post">
-<input type="text" name="brand" value="" placeholder="brand"></input>
 <input type="text" name="model" value="" placeholder="model"></input>
-<input type="text" name="year" value="" placeholder="year"></input>
 <input type="text" name="description" value="" placeholder="description"></input>
 <input type="text" name="weight" value="" placeholder="weight"></input>
 <input type="submit" name="submit">
 </form>
 
 <a href="exchange.php" class="button">Go to Convert your bicycle weight</a>
-<a href="energy.php" class="button">Go to See Energy</a>
+<a href="energy.php" class="button">Go to See Energy <br /></a> -->
 <?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+// require_once '../vendor/autoload.php';
+// require_once '../classes/Bicycle.php';
+// require_once '../classes/ElectricalBicycle.php';
 
-$name = $bicycle->name();
+// use Classes\Bicycle;
+// use Classes\ElectricalBicycle;
 
-echo "<pre>";
-print_r($bicycle) . "<br>"; 
+// ?>
+// <?php
+// session_start();
 
-echo "the bicycle name is " . $name ."<br>" ;
+// if(isset($_POST)){
+//     $_SESSION['model'] = $_POST['model'];
+//      $_SESSION['description'] = $_POST['description'];
+//     $_SESSION['weight'] = $_POST['weight'];
+// }
+
+// $bicycle= new Bicycle(['brand' => 'rocke' , 'year' => 2022]);
+// $bicycle->model = $_POST['model']?? null;
+// $bicycle->description = $_POST['description']?? null;   
+// $weight= $_POST['weight'];
+// $bicycle->set_weight($weight);
+
+// $car = clone $bicycle;
+
+
+
+// echo "<pre>";
+// print_r($bicycle) . "<br>"; 
+// echo "the bicycle name is " . $name ."<br>" ;
+
+
 
 
 
