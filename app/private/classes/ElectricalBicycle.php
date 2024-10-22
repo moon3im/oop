@@ -2,6 +2,7 @@
 namespace App;
 
 require_once '../classes/Bicycle.php';
+
 use App\Bicycle;
 class ElectricalBicycle extends Bicycle {
 

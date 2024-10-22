@@ -2,31 +2,36 @@
 
 namespace App;
 
-class Bicycle {
+require_once 'DatabaseObject.php';
 
-    public const CATEGORY = ['City' , 'Mountains' , 'Hybrid'];
-    public $brand; 
+use App\DatabaseObject;
+
+class Bicycle extends DatabaseObject {
+    public $id ;
+    public $brand;
     public $model;
     public $year;
-    public $weight;
-    public $description;
     public $color;
+    public $weight_kg;
     public $price;
-    public $condition;
+    public $description;
     public $category;
+    public $gender;
+    public $condition_id;
     public $name;
     
-    
     public function __construct($args=[]){
+      $this->id = $args['id'] ?? null ;
       $this->brand = $args['brand'] ?? null;
       $this->model = $args['model'] ?? null ;
       $this->year = $args['year'] ?? null ;
-      $this->color = $args['color'] ?? null ;
-      $this->weight = $args['weight'] ?? null ;
-      $this->price = $args['price'] ?? null ;
-      $this->description = $args['description'] ?? null ;
       $this->category = $args['category'] ?? null ;
-      $this->condition = $args['condition'] ?? null ;
+      $this->gender = $args['gender'] ?? null; 
+      $this->color = $args['color'] ?? null ;
+      $this->price = $args['price'] ?? null ;
+      $this->weight_kg = $args['weight_kg'] ?? null ;
+      $this->condition_id = $args['condition_id'] ?? null ;
+      $this->description = $args['description'] ?? null ;
       $this->name = $this->brand . '' . $this->year . '' . $this->model ;
     }
 
@@ -55,16 +60,17 @@ class Bicycle {
           echo "Please put your weight correctly";
         }
       }
-      return self::$weight = $weight;
+      return self::$weight_kg = $weight;
     }
 
     function weight_lb($weight_kg){
-      return  $this->weight = $weight_kg * 2.20462 ?? 0;
+      return  $this->weight_kg = $weight_kg * 2.20462 ?? 0;
     }
 
     function weight_lbs($weight_lbs){
-      return $this->weight = $weight_lbs / 2.20462;
+      return $this->weight_kg = $weight_lbs / 2.20462;
     }
 
+   
 
 }
