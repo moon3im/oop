@@ -12,7 +12,7 @@ class Bicycle extends DatabaseObject {
     public $model;
     public $year;
     public $color;
-    public $weight_kg;
+    public float|null $weight_kg;
     public $price;
     public $description;
     public $category;
@@ -67,9 +67,9 @@ class Bicycle extends DatabaseObject {
       return  $this->weight_kg = $weight_kg * 2.20462 ?? 0;
     }
 
-    function weight_lbs($weight_lbs){
-      return $this->weight_kg = $weight_lbs / 2.20462;
-    }
+    // function weight_lbs($weight_lbs){
+    //   return $this->weight_kg = $weight_lbs / 2.20462;
+    // }
 
    
 

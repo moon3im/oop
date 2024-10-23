@@ -1,7 +1,7 @@
 <?php 
-require_once '../../private/classes/Bicycle.php';
+require_once '../../private/classes/DatabaseObject.php';
 
-use App\Bicycle;
+use App\DatabaseObject;
 
 define("DB_SERVER","localhost");
 define("DB_USER","root");
@@ -9,7 +9,7 @@ define("DB_PASSWORD" , "root");
 define("DB_NAME","by_store");
 
 $database = db_connect();
-Bicycle::set_database($database);
+DatabaseObject::set_database($database);
 function db_connect(){
     $conn = new mysqli (DB_SERVER,DB_USER,DB_PASSWORD,DB_NAME);
     confirm_db_connect($conn);

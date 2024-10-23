@@ -20,24 +20,16 @@ require_once '../../private/classes/Bicycle.php';
 use App\Bicycle;
 
 use function App\private\dd;
+use function App\private\handle_404;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if(isset($_GET['id']) && !empty($_GET['id'])){
+    $bicycle = Bicycle::find_by_id($_GET['id']);
+}else {
+    handle_404();
+}
 
-    $args=[
-        'brand'=> $_POST['brand'] ?? null ,
-        'model' => $_POST['model'] ?? null,
-        'year' =>  $_POST['year'] ?? "2024",
-        'category' => $_POST['category']?? null,
-        'gender'=> $_POST['gender']?? null,
-        'color' => $_POST['color'] ?? null,
-        'price' => $_POST['price'] ?? '0',
-        'weight_kg' => $_POST['weight_kg'] ?? '0',
-        'condition_id' => $_POST['condition_id'] ?? '3',
-        'description' => $_POST['description'] ?? null
-    ];
-        $bicycle = new Bicycle($args);
-        $bicycle::update($args);
-}   
+
+
 ?>
 <body class="bg-orange-50">
     <header class="bg-yellow-600 text-white py-4">
@@ -79,16 +71,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->color; ?></td>
                         </tr>
                         <tr>
+                            <td class="py-3 px-6 border-b font-bold text-yellow-600">Category</td>
+                            <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->category; ?></td>
+                        </tr>
+                        <tr>
                             <td class="py-3 px-6 border-b font-bold text-yellow-600">Gender</td>
                             <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->gender; ?></td>
                         </tr>
                         <tr>
                             <td class="py-3 px-6 border-b font-bold text-yellow-600">Weight</td>
-                            <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->weight_kg . "kg"; ?> </td>
+                            <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->weight_kg ; ?> </td>
                         </tr>
                         <tr>
                             <td class="py-3 px-6 border-b font-bold text-yellow-600">Price</td>
-                            <td class="py-3 px-6 border-b font-bold"><?php echo '$' . $bicycle->price; ?></td>
+                            <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->price; ?></td>
                         </tr>
                         <tr>
                             <td class="py-3 px-6 border-b font-bold text-yellow-600">Description</td>
@@ -96,14 +92,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </tr>
                         <tr>
                             <td class="py-3 px-6 border-b font-bold text-yellow-600">Condition</td>
-                            <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->condition_id; ?></td>
+                            <td class="py-3 px-6 border-b font-bold"><?php echo $bicycle->condition_id . "/5"; ?></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
     
             <div class="overflow-x-auto text-left grow">
-                <form class="min-w-100 mx-16 " action="details.php" method="POST">
+                <form class="min-w-100 mx-16 " action="update_bicycle.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $bicycle->id; ?>"> <!-- Replace with dynamic id value -->
                     
                     <div class="grid grid-cols-2 gap-6">
@@ -126,6 +122,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <label for="color" class="block text-gray-700 font-semibold mb-2">Color</label>
                             <input type="text" name="color" id="color" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->color; ?>">
                         </div>
+                        <div>
+                            <label for="category" class="block text-gray-700 font-semibold mb-2">Category</label>
+                            <input type="text" name="category" id="category" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->category; ?>">
+                        </div>
         
                         <div>
                             <label for="gender" class="block text-gray-700 font-semibold mb-2">Gender</label>
@@ -138,12 +138,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
                         <div>
                             <label for="weight" class="block text-gray-700 font-semibold mb-2">Weight</label>
-                            <input type="text" name="weight_kg" id="weight_kg" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->weight_kg . "kg"; ?>">
+                            <input type="text" name="weight_kg" id="weight_kg" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->weight_kg ; ?>">
                         </div>
         
                         <div>
                             <label for="price" class="block text-gray-700 font-semibold mb-2">Price</label>
-                            <input type="text" name="price" id="price" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo '$' . $bicycle->price; ?>">
+                            <input type="text" name="price" id="price" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->price; ?>">
                         </div>
 
                         <div>
@@ -164,7 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
         
                     <div class="relative">
-                        <div class="absolute top-0 right-0 mt-5 inline-flex gap-6">
+                        <div class="absolute top-0 right-0 mt-16 inline-flex gap-6">
                             <a href="inventory.php" class="bg-yellow-600 text-white py-2 px-6 font-bold rounded-lg shadow-md hover:bg-orange-200 transition duration-200">
                                 Cancel
                             </a>

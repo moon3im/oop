@@ -1,6 +1,7 @@
 <?php 
 
 namespace App\private;
+session_start();
 function dd(...$vars) {
     foreach ($vars as $var) {
         echo '<pre>';
@@ -9,6 +10,7 @@ function dd(...$vars) {
     }
     die();
 }
+
 
 function redirect($url, $statusCode = 302) {
     header("Location: $url", true, $statusCode);
@@ -85,7 +87,7 @@ function end_session() {
 
 function handle_404() {
     http_response_code(404);
-    include '404.php'; 
+    echo "Not found";
     exit();
 }
 

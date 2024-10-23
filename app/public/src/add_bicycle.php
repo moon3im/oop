@@ -48,27 +48,27 @@ $args=[
                     <div class="grid grid-cols-2 gap-6">
                         <div>
                             <label for="brand" class="block text-gray-700 font-semibold mb-2">Brand</label>
-                            <input type="text" name="brand" id="brand" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->brand ?? null;  ?>">
+                            <input type="text" name="brand" id="brand" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->brand ?? null;  ?>" required>
                         </div>
             
                         <div>
                             <label for="model" class="block text-gray-700 font-semibold mb-2">Model</label>
-                            <input type="text" name="model" id="model" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->model ?? null; ?>">
+                            <input type="text" name="model" id="model" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->model ?? null; ?>"required>
                         </div>
         
                         <div>
                             <label for="year" class="block text-gray-700 font-semibold mb-2">Year</label>
-                            <input type="number" name="year" id="year" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->year ?? null; ?>">
+                            <input type="number" name="year" id="year" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->year ?? null; ?>"required>
                         </div>
         
                         <div>
                             <label for="color" class="block text-gray-700 font-semibold mb-2">Color</label>
-                            <input type="text" name="color" id="color" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->color ?? null; ?>">
+                            <input type="text" name="color" id="color" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->color ?? null; ?>"required>
                         </div>
         
                         <div>
                             <label for="gender" class="block text-gray-700 font-semibold mb-2">Gender</label>
-                            <select name="gender" id="gender" class="w-full bg-gray-50 border-gray-400 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200">
+                            <select name="gender" id="gender" class="w-full bg-gray-50 border-gray-400 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" required>
                                 <option value="Unisex" selected><?php echo $bicycle->gender ?? null; ?></option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
@@ -77,20 +77,17 @@ $args=[
         
                         <div>
                             <label for="weight" class="block text-gray-700 font-semibold mb-2">Weight</label>
-                            <input type="text" name="weight_kg" id="weight" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->weight_kg ?? null; ?>">
+                            <input type="text" name="weight_kg" id="weight" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->weight_kg ?? null; ?>"required>
                         </div>
         
                         <div>
                             <label for="price" class="block text-gray-700 font-semibold mb-2">Price</label>
-                            <input type="text" name="price" id="price" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->price ?? null; ?>">
+                            <input type="text" name="price" id="price" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->price ?? null; ?>"required>
                         </div>
-                        <div>
-                            <label for="description" class="block text-gray-700 font-semibold mb-2">Condition</label>
-                            <input type="number" name="description" id="description" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" value="<?php echo $bicycle->condition_id ?? null; ?>"></input>
-                        </div>
+                     
                         <div>
                             <label for="category" class="block text-gray-700 font-semibold mb-2">Category</label>
-                            <select name="category" id="category" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200"> 
+                            <select name="category" id="category" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" required> 
                                 <option value="city">City</option>
                                 <option value="mountains">Mountains</option>
                                 <option value="hybrid">Hybrid</option>
@@ -98,7 +95,7 @@ $args=[
                         </div>
                         <div>
                             <label for="condition" class="block text-gray-700 font-semibold mb-2">Condition</label>
-                            <select name="condition_id" id="condition_id" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200"> 
+                            <select name="condition_id" id="condition_id" class="w-full bg-gray-50 border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" required> 
                                 <option value="1">1 : Bad</option>
                                 <option value="2">2 : Fair</option>
                                 <option value="3">3 : Good</option>
@@ -109,7 +106,7 @@ $args=[
         
                         <div>
                             <label for="description" class="block text-gray-700 font-semibold mb-2">Description</label>
-                            <textarea name="description" id="description" class="w-full bg-gray-50   border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200"><?php echo $bicycle->description ?? null; ?></textarea>
+                            <textarea name="description" id="description" class="w-full bg-gray-50   border-gray-300 px-4 py-2 rounded-lg shadow-sm focus:ring focus:ring-blue-200" required><?php echo $bicycle->description ?? null; ?></textarea>
                         </div>
                     </div>
         

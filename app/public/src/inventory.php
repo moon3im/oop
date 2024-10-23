@@ -53,7 +53,7 @@ $bicycles=Bicycle::find_all();
     <a href="add_bicycle.php" class="bg-yellow-600 text-white py-2 px-4 rounded-lg text-xl font-semibold shadow-md hover:bg-green-600 transition duration-200">
         Add Bicycle
     </a>
-</div>
+    </div>
 
         <table class="bg-white border border-gray-300 w-full mb-8">
          <thead>
@@ -65,6 +65,7 @@ $bicycles=Bicycle::find_all();
             <th class="py-3 px-6 text-left">Color</th>
             <th class="py-3 px-6 text-left">Gender</th>
             <th class="py-3 px-6 text-left">Weight</th>
+            <th class="py-3 px-6 text-left">Category</th>
             <th class="py-3 px-6 text-left">Price</th>
             <th class="py-3 px-6 text-left">Description</th>
             <th class="py-3 px-6 text-left">Condition</th>
@@ -82,6 +83,7 @@ $bicycles=Bicycle::find_all();
                         <td class="py-3 px-6"><?php echo $bicycle->color; ?></td>
                         <td class="py-3 px-6"><?php echo $bicycle->gender; ?></td>
                         <td class="py-3 px-6"><?php echo $bicycle->weight_kg; ?></td>
+                        <td class="py-3 px-6"><?php echo $bicycle->category; ?></td>
                         <td class="py-3 px-6"><?php echo '$' . $bicycle->price; ?></td>
                         <td class="py-3 px-6"><?php echo $bicycle->description; ?></td>
                         <td class="py-3 px-6"><?php echo $bicycle->condition_id; ?></td>

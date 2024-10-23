@@ -10,10 +10,12 @@ class DatabaseObject {
         self::$database = $database ;
     }
 
+
     public static function find_all(){
         $sql ="SELECT * FROM bicycles" ;
        return self::find_by_sql($sql);
     }
+   
 
     public static function find_by_sql($sql){
       $result = self::$database->query($sql);
@@ -30,7 +32,7 @@ class DatabaseObject {
     }
 
     static public function instatiate($record){
-        $object = new Bicycle();
+        $object = new Admin();
         foreach($record as $property => $value){
             if(property_exists($object , $property)){
                 $object->$property = $value;
@@ -87,15 +89,15 @@ class DatabaseObject {
         return $result;
     }
 
-    static public function update($args=[]){
+    static public function update($args=[]){    
         $sql = "UPDATE bicycles SET ";
         $sql .= "brand = '" . $args['brand'] . "', ";
         $sql .= "model = '" . $args['model'] . "', ";
-        $sql .= "year = '" . $args['year'] . "', ";
-        $sql .= "category = '" . $args['category'] ?? null . "', ";
+        $sql .= "year = '" . $args['year'] . "', "; 
+        $sql .= "category = '" . $args['category'] . "', ";
         $sql .= "gender = '" . $args['gender'] . "', ";
         $sql .= "color = '" . $args['color'] . "', ";
-        $sql .= "price = '" . $args['price'] ?? '0' . "', ";
+        $sql .= "price = '" . $args['price'] . "', ";
         $sql .= "weight_kg = '" . $args['weight_kg'] . "', ";
         $sql .= "condition_id = '" . $args['condition_id'] . "', ";
         $sql .= "description = '" . $args['description'] . "'"; 
@@ -105,5 +107,13 @@ class DatabaseObject {
             exit("DB Query Failed");
         }
         return $result;
+    }
+
+    protected static function sanitized_values($args=[]){
+        $sanitized =[];
+        foreach ($args as $key => $value){
+            $sanitized[$key] = self::$database->escapestring($value);
+        }
+        return $sanitized ;
     }
 }
