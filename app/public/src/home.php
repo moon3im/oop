@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Add animations */
         .fade-in {
             opacity: 0;
             transform: translateY(-10px);
@@ -35,7 +34,7 @@
             }
         }
 
-        /* Button hover effect */
+
         .hover-grow {
             transition: transform 0.3s ease-in-out, background-color 0.3s;
         }
@@ -44,7 +43,7 @@
             transform: scale(1.05);
         }
 
-        /* Scrollable card panel */
+
         .scroll-panel {
             display: flex;
             overflow-x: auto;
@@ -53,7 +52,7 @@
         }
 
         .scroll-panel::-webkit-scrollbar {
-            display: none; /* Hide the scrollbar */
+            display: none; 
         }
 
         .card {
@@ -91,25 +90,25 @@
             color: gray;
         }
 
-        /* Bike Image Animation */
+  
   
         .bike-container {
         position: absolute;
         margin-top: 60px;
         width: 650px;
-        height: 760px; /* Full screen height */
+        height: 760px; 
         display: flex;
-        justify-content: flex-end; /* Aligns the bike to the right */
+        justify-content: flex-end; 
         align-items: center;
         right: 0% ;
-        border-radius: 10px; /* Optional: Rounds the corners */
+        border-radius: 10px; 
 }
 
 
 
         @keyframes slideIn {
             to {
-                left: 0; /* Slide in to the left */
+                left: 0; 
             }
         }
     </style>
@@ -120,27 +119,22 @@
 
         </div>
 
-    <!-- Header -->
-    <header class="text-white py-4 bg-opacity-80 bg-gray-900 shadow-lg">
+    <header class="text-white py-4 bg-opacity-40 bg-gray-900 shadow-lg">
         <div class="container mx-auto flex justify-between items-center fade-in">
-            <p class="text-3xl font-bold">Bicycle Store</p>
+            <p class="text-3xl font-bold">VEELOP</p>
             <div class="space-x-6 flex items-center">
-                <!-- Explore Icon -->
                 <a href="explore.php" class="text-white font-bold bg-transparent py-2 px-4 rounded-lg transition hover:bg-yellow-600 hover-grow">
                     <i class="fas fa-search fa-lg"></i>
                 </a>
 
-                <!-- Subscribe Icon -->
                 <a href="subscribe.php" class="text-white font-bold bg-transparent py-2 px-4 rounded-lg transition hover:bg-yellow-600 hover-grow">
                     <i class="fas fa-envelope fa-lg"></i>
                 </a>
 
-                <!-- Services Icon -->
                 <a href="about_us.php" class="text-white font-bold py-2 px-4 rounded-lg transition hover:bg-yellow-600 hover-grow">
                     <i class="fas fa-tools fa-lg"></i>
                 </a>
 
-                <!-- Login Icon -->
                 <a href="login.php" class="text-white font-bold py-2 px-8 rounded-lg transition duration-300 hover:bg-yellow-600 hover-grow" style="background-color: #e9b582;">
                     <i class="fas fa-sign-in-alt fa-lg"></i>
                 </a>
@@ -148,25 +142,19 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto mt-48 items-center py-12">
-        <!-- Left Section -->
-        <div class="w-1/2 text-left">
-            <h1 class="text-8xl mt-0 font-bold text-white mb-12 fade-in">Find Your Perfect Ride!</h1>
-            <p class="text-lg text-gray-100 mb-8 fade-in">Explore our wide range of bicycles, designed for every rider. Whether you're looking for a mountain bike, a road bike, or a casual ride, we’ve got you covered.</p>
-            <a href="inventory.php" class="text-white py-3 px-8 rounded-lg text-xl font-bold shadow-md transition duration-200 hover-grow" 
-               style="background-color: #e9b582;" 
+    <main class="container mx-auto mt-48 items-center py-2">
+        <div class="w-1/2 ml-12 text-left">
+            <h1 class="text-8xl font-bold text-white mb-12 fade-in">Find Your Perfect Ride!</h1>
+            <p class="text-lg text-gray-100 mb-16 fade-in">Explore our wide range of bicycles, designed for every rider. Whether you're looking for a mountain bike, a road bike, or a casual ride, we’ve got you covered.</p>
+            <a href="inventory.php" class="py-4 px-10 rounded-lg text-2xl font-bold shadow-md transition duration-200 hover-grow" 
+               style="background-color: #ffffff; color:rgba(0, 0, 0, 0.5); " 
                onmouseover="this.style.backgroundColor='#a5745d'" 
-               onmouseout="this.style.backgroundColor='#e9b582';">
+               onmouseout="this.style.backgroundColor='#ffffff';">
                 Start
             </a>
-        </div>
-
-        <!-- Right Section (Cards) -->
-  
+        </div>  
     </main>
 
-    <!-- Footer -->
     <footer class="absolute inset-x-0 bottom-0 text-white py-6 mt-20">
         <div class="container mx-auto text-center">
             <div class="flex justify-center space-x-6">

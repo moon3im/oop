@@ -75,16 +75,30 @@ Class Admin extends DatabaseObject {
             }
             return $result;
     }
-    public static function login($email, $password) {
+    public static function find_by_email($email) {
         $email = self::$database->real_escape_string($email);
-        $sql = "SELECT * FROM admins WHERE email = '$email' AND hashed_password ='$password' LIMIT 1";
+        $sql = "SELECT * FROM admins WHERE email = '$email' LIMIT 1";
         $result = self::$database->query($sql);
-
         if ($result) {
             $admin = $result->fetch_object();
+            return $admin;
         }
-
-        return $admin;
+        return false ;
     }
 
+    public static function get_admin_passwords(){
+        $sql = "SELECT hashed_password FROM admins ";
+        $result = self::$database->query($sql);
+        return $result ;
+    }
+
+    public static function verify_email($email){
+        $sql = "SELECT * FROM admins  WHERE email LIKE '$email' LIMIT 1";
+        $result = self::$database->query($sql);
+        if(!$result){
+             echo "You must enter a valid email" ;
+        }else{
+            return  $result ;
+        }
+    }
 }  

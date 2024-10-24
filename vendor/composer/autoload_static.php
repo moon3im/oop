@@ -11,6 +11,10 @@ class ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11
         array (
             'Shared\\' => 7,
         ),
+        'I' => 
+        array (
+            'Init\\' => 5,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -22,9 +26,13 @@ class ComposerStaticInit3e97d502b0dafad3a0d45a8f1175bb11
         array (
             0 => __DIR__ . '/../..' . '/private/shared',
         ),
+        'Init\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/public/src',
+        ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/private/classes',
+            0 => __DIR__ . '/../..' . '/app/private/classes',
         ),
     );
 

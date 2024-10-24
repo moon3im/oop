@@ -1,3 +1,7 @@
+<?php 
+require_once "app.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,6 @@
 </head>
 <body class="bg-gray-100 bg-cover bg-center z-0" style="background-image: url('../assets/back.png');">
 
-    <!-- Header -->
 <header class="text-white py-4">
     <div class="container mx-auto text-left flex justify-between items-center">
         <p class="text-3xl font-bold">Bicycle Store</p>
@@ -35,8 +38,7 @@
     </div>
 </header>
 
-
-    <!-- Main Content -->
+ 
 <main class="flex items-top pt-24 pb-80 justify-center min-h-screen">
                 <div class="w-full bg-yellow-100 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700" style="opacity: 0.8;">
                      <div class="p-6 space-y-4 md:space-y-4 sm:p-8">
@@ -73,7 +75,6 @@
                 </div>
 </main>
 
-    <!-- Footer -->
 <footer class="bg-grey-100 text-white py-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 Bicycle Store. All Rights Reserved.</p>

@@ -12,8 +12,8 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 require_once '../../private/functions.php';
+require_once ('app.php');
 require_once('conn.php');
 require_once '../../private/classes/Bicycle.php';
 use App\Bicycle;
@@ -26,8 +26,7 @@ use function App\private\dd;
 $file = fopen("../../private/data.csv","r");
 $data = fgetcsv($file, 1000, ",", '"', "\\");
 
-$bicycles=Bicycle::find_all();
-
+$bicycles= Bicycle::find_all_bicycles();
 // $bicycles = [];
 // while($bicycle = fgetcsv($file, 1000, ",", '"', "\\")){ 
 //     array_push($bicycles,Bicycle::intstantiate_object_from_csv($bicycle));

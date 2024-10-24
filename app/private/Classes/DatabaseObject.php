@@ -11,12 +11,7 @@ class DatabaseObject {
     }
 
 
-    public static function find_all(){
-        $sql ="SELECT * FROM bicycles" ;
-       return self::find_by_sql($sql);
-    }
-   
-
+    
     public static function find_by_sql($sql){
       $result = self::$database->query($sql);
       if(!$result){
@@ -25,14 +20,14 @@ class DatabaseObject {
       $ob_array =[];
       
       while($record = $result->fetch_assoc()){
-        $ob_array[] = self::instatiate($record) ;
+        $ob_array[] = static::instatiate($record) ;
       }
       $result->free();
         return $ob_array; 
     }
 
     static public function instatiate($record){
-        $object = new Admin();
+        $object = new static();
         foreach($record as $property => $value){
             if(property_exists($object , $property)){
                 $object->$property = $value;

@@ -1,3 +1,20 @@
+<?php
+require_once 'app.php';
+use function App\private\dd;
+use App\Admin;
+use App\Session;
+$sessionm::require_login();
+dd($_SESSION);
+
+
+// if(isset($_GET['id']) && !empty($_GET['id'])){
+//     $bicycle = Bicycle::find_by_id($_GET['id']);
+// }else {
+//     handle_404();
+// }
+$admins = Admin::find_all_admins();
+// dd($admins);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,30 +26,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </head>
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-require_once '../../private/functions.php';
-require_once '../../private/classes/Admin.php';
-require_once('conn.php');
-use function App\private\dd;
-use function App\private\require_login;
-require_login();
-
-use App\Admin;
-use function App\private\handle_404;
-
-
-
-// if(isset($_GET['id']) && !empty($_GET['id'])){
-//     $bicycle = Bicycle::find_by_id($_GET['id']);
-// }else {
-//     handle_404();
-// }
-$admins = Admin::find_all_admins();
-// dd($admins);
-?>
 <body class="bg-orange-50">
     <header class="bg-yellow-600 text-white py-4">
         <div class="container mx-auto text-left">

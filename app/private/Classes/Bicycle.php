@@ -6,6 +6,8 @@ require_once 'DatabaseObject.php';
 
 use App\DatabaseObject;
 
+use function App\private\dd;
+
 class Bicycle extends DatabaseObject {
     public $id ;
     public $brand;
@@ -62,15 +64,14 @@ class Bicycle extends DatabaseObject {
       }
       return self::$weight_kg = $weight;
     }
+    public static function find_all_bicycles(){
+      $sql ="SELECT * FROM bicycles" ;
+     return self::find_by_sql($sql);
+    }
 
     function weight_lb($weight_kg){
       return  $this->weight_kg = $weight_kg * 2.20462 ?? 0;
     }
 
-    // function weight_lbs($weight_lbs){
-    //   return $this->weight_kg = $weight_lbs / 2.20462;
-    // }
-
-   
 
 }

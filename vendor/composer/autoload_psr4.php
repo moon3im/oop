@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Shared\\' => array($baseDir . '/private/shared'),
-    'App\\' => array($baseDir . '/private/classes'),
+    'Init\\' => array($baseDir . '/app/public/src'),
+    'App\\' => array($baseDir . '/app/private/classes'),
     '' => array($baseDir . '/private'),
 );

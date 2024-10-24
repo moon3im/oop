@@ -2,7 +2,8 @@
     "name": "double-click/oop",
     "autoload": {
     "psr-4": {
-        "App\\": "private/classes/",
+        "App\\": "app/private/classes",
+        "Init\\": "app/public/src",
         "Shared\\": "private/shared/",
         "": "private/"
     }

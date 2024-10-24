@@ -1,7 +1,14 @@
 <?php 
 
 namespace App\private;
-session_start();
+require_once '../../public/src/app.php';
+
+function require_login() {
+    if ((!isset($_SESSION["admin_id"]))) {
+        header("Location: login.php");
+        exit;
+    }
+}
 function dd(...$vars) {
     foreach ($vars as $var) {
         echo '<pre>';
@@ -10,7 +17,6 @@ function dd(...$vars) {
     }
     die();
 }
-
 
 function redirect($url, $statusCode = 302) {
     header("Location: $url", true, $statusCode);
