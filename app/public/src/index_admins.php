@@ -3,9 +3,7 @@ require_once 'app.php';
 use function App\private\dd;
 use App\Admin;
 use App\Session;
-$sessionm::require_login();
-dd($_SESSION);
-
+$session::require_login();
 
 // if(isset($_GET['id']) && !empty($_GET['id'])){
 //     $bicycle = Bicycle::find_by_id($_GET['id']);
@@ -27,10 +25,17 @@ $admins = Admin::find_all_admins();
 
 </head>
 <body class="bg-orange-50">
-    <header class="bg-yellow-600 text-white py-4">
+    <header class="bg-yellow-600 flex px-32 text-white py-4">
         <div class="container mx-auto text-left">
             <h1 class="text-3xl font-bold">Admins Details</h1>
         </div>
+       
+        <a href="logout.php" class="text-white font-bold bg-transparent mr-12 py-2 px-4 rounded-lg transition duration-200" 
+               style="background-color: transparent;" 
+               onmouseover="this.style.backgroundColor='rgba(233, 181, 130, 0.7)'" 
+               onmouseout="this.style.backgroundColor='transparent'">
+                Logout
+        </a>
     </header>
     
     <main class="container bg-white mx-auto my-10 p-6 shadow-lg rounded-lg">

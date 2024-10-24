@@ -111,4 +111,10 @@ class DatabaseObject {
         }
         return $sanitized ;
     }
+    public static function count_all_bicycles(){
+        $sql ="SELECT COUNT(*) FROM bicycles" ;
+       $result=  self::$database->query($sql);
+       $row = $result->fetch_array();
+       return array_shift($row);
+      }
 }
